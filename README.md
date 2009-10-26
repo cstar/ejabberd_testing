@@ -30,7 +30,7 @@ Set the following environnement variables :
  * ERL_TOP: pointing to your erlang install (`/usr/local/lib/erlang`)
  * EJABBERD_INSTALL: pointing to your ejabberd install (`/opt/ejabberd`)
 
-Also edit the line in the test file `t01_echo.t` the pz parameter to point to the ebin directory for ejabberd
+Also edit the line in the test file `t01_echo.t` the `-pz` parameter to point to the `ebin` directory for ejabberd
 Once it's done :
 
 	$ rake test
@@ -48,9 +48,9 @@ Most of the time, mocking `ejabberd_router` is the only thing you will need to d
 
 `mock:calls()` empties the mock call lists
 
-**Very important** : `timer:sleep(100)` in the test code after sending a message to the module. Or else the test will be ran before the call to the mock module will be completed. Been bit by this one, and it stings.
+**Very important** : `timer:sleep(100)` in the test code after sending a message to the module. Or else the test will be ran before the call to the mock module is completed. Been bit by this one, and it stings.
 
-I wrote a lot of LOCs for just testing `mod_echo`. I was initially hoping for something more compact. However I decided to test an existing module, not written with automated testing in mind. So my testing is quite contrived — especially in the end. But it is the original `mod_echo` with a single modification (the ability to configure version checking in `ejabberd.cfg`)
+Wrote a lot of LOCs for just testing `mod_echo`. I was initially hoping for something more compact. But mod_echo was not written with automated testing in mind. So my testing is quite contrived — especially in the end. There is a single modification to the ejabberd `mod_echo`, the ability to set the version check in `ejabberd.cfg`
 
 I guess a couple of helper library could be extracted.
 
