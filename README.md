@@ -35,7 +35,7 @@ Once it's done :
 
 	$ rake test
 
-You can also deploy your modules to the ejabberd install by :
+You may also deploy your modules to the `ejabberd` install by :
 
   $ rake install
 
@@ -69,7 +69,7 @@ Final words
 ------------
 Is this testing strategy valid ?
 I think so. I have been able to test the capabilities of `mod_echo` which was not written with testing in mind.
-I expect this strategy to fare better test-friendly code.
+I expect this strategy to fare better with test-friendly code.
 
 Help appreciated
 ----------------
